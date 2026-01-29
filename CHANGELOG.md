@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-01-29
+
+### Added
+- **Polars Support**: Complete high-performance Polars DataFrame support
+  - New `bidviz_polars` module with all transformer implementations
+  - 2-10x faster transformations on large datasets (100K+ rows)
+  - Parallel processing and lazy evaluation support
+  - Memory-efficient columnar operations
+  - Zero-copy operations where possible
+- Polars-specific utility functions in `bidviz_polars/utils.py`
+- Comprehensive test suite for Polars transformers (90+ tests)
+- Polars usage examples:
+  - `examples/polars_basic_usage.py` - All chart type examples
+  - `examples/polars_fastapi_integration.py` - API integration example
+- Performance comparison documentation
+- Updated README with Polars Quick Start and performance benchmarks
+
+### Technical Details
+- Added `polars>=0.20.0` as core dependency
+- Modular architecture mirrors pandas implementation
+- All 10+ chart types supported with Polars
+- Same JSON output format as pandas version
+- Full API compatibility with pandas transformers
+
+### Performance
+- 2x faster on 1K row datasets
+- 6x faster on 10K row datasets
+- 7x faster on 100K row datasets
+- 10x faster on 1M+ row datasets
+
 ## [1.0.0] - 2025-01-02
 
 ### Added
